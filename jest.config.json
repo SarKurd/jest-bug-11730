@@ -1,0 +1,30 @@
+{
+  "coverageDirectory": "./coverage/jest/",
+  "coverageReporters": ["lcov", "text", "html"],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/mocks/fileMock.js",
+    "\\.(css)$": "identity-obj-proxy",
+    "^@layout(.*)$": "<rootDir>/src/components/layout$1",
+    "^@controls(.*)$": "<rootDir>/src/components/controls$1",
+    "^@styles(.*)$": "<rootDir>/src/components/styles$1",
+    "^@routes(.*)$": "<rootDir>/src/components/Routes$1",
+    "^@pages(.*)$": "<rootDir>/src/pages$1",
+    "^@assets(.*)$": "<rootDir>/src/assets$1",
+    "^@services(.*)$": "<rootDir>/src/services$1",
+    "^@bootstrap(.*)$": "<rootDir>/src/bootstrap$1",
+    "^@hooks(.*)$": "<rootDir>/src/hooks$1"
+  },
+  "setupFiles": ["<rootDir>/jest/setup-test-env.js"],
+  "globalSetup": "<rootDir>/jest/globalSetup.js",
+  "testMatch": ["<rootDir>/src/**/*.test.js"],
+  "verbose": false,
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/jest/setup-test-after-env.js"],
+  "transformIgnorePatterns": ["node_modules", "^.+\\.module\\.(css)$"],
+  "modulePathIgnorePatterns": ["<rootDir>[/\\\\](build|docs|node_modules|scripts|dist)[/\\\\]"],
+  "transform": {
+    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "babel-jest",
+    "^.+\\.css$": "<rootDir>/jest/mocks/cssMock.js"
+  },
+  "testURL": "http://localhost/en-DE/preferences"
+}
