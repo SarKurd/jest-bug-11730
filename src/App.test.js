@@ -7,6 +7,6 @@ test("should generate snapshots", () => {
   const { container } = render(<App />);
 
   expect(container).toMatchSnapshot();
-  // uncomment this
-  // expect(container).toMatchInlineSnapshot();
+  // comment this and it works
+  expect(container).toMatchInlineSnapshot("");
 });
